@@ -1,6 +1,7 @@
 import sys
 import pygame
 from settings import Settings
+from ship import Ship
 
 def run_game():
     #game init
@@ -8,6 +9,9 @@ def run_game():
     game_settings = Settings()
     screen = pygame.display.set_mode( ( game_settings.screen_width, game_settings.screen_height ) )
     pygame.display.set_caption( "Alience" )
+
+    # создание корабля
+    ship = Ship( screen )
 
     # основной цикл
     while True:
@@ -18,6 +22,8 @@ def run_game():
 
         # перересовка
         screen.fill( game_settings.bg_color )
+        # прорисовка кораблика
+        ship.blitme()
         # отображение последнего прорисованного экрана
         pygame.display.flip()
 
