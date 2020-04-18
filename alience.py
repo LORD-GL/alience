@@ -11,7 +11,7 @@ def run_game():
     pygame.display.set_caption( "Alience" )
 
     # создание корабля
-    ship = Ship( screen )
+    ship = Ship( screen, game_settings )
 
     # основной цикл
     while True:
