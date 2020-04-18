@@ -24,11 +24,7 @@ def run_game():
         # Обработка событий
         ship.update()
         # Обработка пуль
-        bullets.update()
-        #цикл для удаления не нужных пуль
-        for bullet in bullets.copy():
-            if bullet.rect.bottom < 0:
-                bullets.remove( bullet )
+        gf.update_bullets( bullets )
         #print( len( bullets ) )
         # обновление экрана
         gf.update_screen( game_settings, screen, ship, bullets )
