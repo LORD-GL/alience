@@ -11,6 +11,8 @@ def check_keydown_events(event, ship, screen, game_settings, bullets ):
     elif event.key == pygame.K_SPACE:
         # Создание новой пули и включение ее в группу bullet
         fire_bullet( ship, screen, game_settings, bullets )
+    elif event.key == pygame.K_q:
+        sys.exit()
 
 def fire_bullet( ship, screen, game_settings, bullets ):
     """ Создание новой пули и включение ее в группу bullet если максимум не достигнут """
