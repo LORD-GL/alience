@@ -17,6 +17,8 @@ def run_game():
     while True:
         # события клавы и мыши
         gf.check_events( ship )
+        # Обработка событий
+        ship.update()
         # обновление экрана
         gf.update_screen( game_settings, screen, ship )
 
