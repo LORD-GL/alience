@@ -17,3 +17,12 @@ class Bullet( Sprite ):
 
         self.color = game_settings.bullet_color
         self.speed_factor = game_settings.bullet_speed_factor
+
+    def update( self ):
+        """ Перемещение пули """
+        self.y -= self.speed_factor
+        self.rect.y = self.y
+
+    def draw_bullet( self ):
+        """ Вывод пули на экран """
+        pygame.draw.rect( self.screen, self.color, self.rect )
