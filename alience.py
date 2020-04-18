@@ -16,12 +16,8 @@ def run_game():
     # основной цикл
     while True:
         # события клавы и мыши
-        gf.check_events()
-        # перересовка
-        screen.fill( game_settings.bg_color )
-        # прорисовка кораблика
-        ship.blitme()
-        # отображение последнего прорисованного экрана
-        pygame.display.flip()
+        gf.check_events( ship )
+        # обновление экрана
+        gf.update_screen( game_settings, screen, ship )
 
 run_game()
