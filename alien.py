@@ -22,8 +22,13 @@ class Alien( Sprite ):
         """ """
         self.screen.blit( self.image, self.rect )
 
+    def check_edges( self ):
+        """ True, если достиг края"""
+        screen_rect = self.screen.get_rect()
+        if self.rect.right >= screen_rect.right: return True
+        elif self.rect.right <= 0: return True
+
     def update( self ):
         """ перемещает прищельца в право"""
-        self.x += self.game_settings.alien_speed_factor
+        self.x += self.game_settings.alien_speed_factor * self.game_settings.fleet_direction
         self.rect.x = self.x
-        

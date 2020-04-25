@@ -93,6 +93,19 @@ def create_fleet( game_settings, screen, alience, ship):
         for alien_number in range( number_alien_x ):
             create_alien( game_settings, screen, alience, alien_number, alien_width, row_number )
 
-def update_alience( alience ):
+def check_fleet_edges( game_settings, alience ):
+    """ реагирует на достижение флотом края экрана """
+    for alien in alience.sprites():
+        if alien.check_edges():
+            change_fleet_direction( game_settings, alience )
+
+def change_fleet_direction( game_settings, alience ):
+    """ Опускает флот и меняет направление флота """
+    for alien in alience.sprites():
+        alien.rect.y += game_settings.fleet_drop_speed
+    game_settings.fleet_direction *= -1
+
+def update_alience( game_settings, alience ):
     """ Обновляет позиции всех пришельцев во флоте """
+    check_fleet_edges( game_settings, alience )
     alience.update()

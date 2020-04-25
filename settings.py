@@ -1,4 +1,4 @@
-м.                     class Settings():
+class Settings():
     """ Класс для хранения всех настроек игры """
 
     def  __init__( self ):
@@ -19,4 +19,7 @@
         self.bullet_allowed = 5
 
         # Настройки пришельцев
-        self.alien_speed_factor = 1                                                                                мммпришельцев
+        self.alien_speed_factor = 1
+        self.fleet_drop_speed = 10
+        # 1 - вправо, -1 - влево
+        self.fleet_direction = 1
