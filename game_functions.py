@@ -93,5 +93,6 @@ def create_fleet( game_settings, screen, alience, ship):
         for alien_number in range( number_alien_x ):
             create_alien( game_settings, screen, alience, alien_number, alien_width, row_number )
 
-    
-    
+def update_alience( alience ):
+    """ Обновляет позиции всех пришельцев во флоте """
+    alience.update()

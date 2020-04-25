@@ -1,4 +1,4 @@
-class Settings():
+м.                     class Settings():
     """ Класс для хранения всех настроек игры """
 
     def  __init__( self ):
@@ -10,9 +10,13 @@ class Settings():
 
         # Настройки корабля
         self.ship_speed_factor = 1.5
+
         #Параметры пули
         self.bullet_speed_factor = 1
         self.bullet_width = 3
         self.bullet_height = 15
         self.bullet_color = ( 60, 60, 60 )
         self.bullet_allowed = 5
+
+        # Настройки пришельцев
+        self.alien_speed_factor = 1                                                                                мммпришельцев

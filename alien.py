@@ -21,3 +21,9 @@ class Alien( Sprite ):
     def blitme( self ):
         """ """
         self.screen.blit( self.image, self.rect )
+
+    def update( self ):
+        """ перемещает прищельца в право"""
+        self.x += self.game_settings.alien_speed_factor
+        self.rect.x = self.x
+        

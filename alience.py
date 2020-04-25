@@ -34,6 +34,7 @@ def run_game():
         # Обработка пуль
         gf.update_bullets( bullets )
         #print( len( bullets ) )
+        gf.update_alience( alience )
         # обновление экрана
         gf.update_screen( game_settings, screen, ship, bullets, alience )
 
