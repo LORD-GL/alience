@@ -37,7 +37,7 @@ def check_events( game_settings, screen, ship, bullets ):
             elif event.type == pygame.KEYUP:
                 check_keyup_events(event, ship)
 
-def update_screen( game_settings, screen, ship, bullets ):
+def update_screen( game_settings, screen, ship, bullets, alien ):
     """ Обновляет экран """
     # перересовка
     screen.fill( game_settings.bg_color )
@@ -46,6 +46,8 @@ def update_screen( game_settings, screen, ship, bullets ):
         bullet.draw_bullet()
     # прорисовка кораблика
     ship.blitme()
+    # Прорисовка прищельцев
+    alien.blitme()
     # отображение последнего прорисованного экрана
     pygame.display.flip()
 
