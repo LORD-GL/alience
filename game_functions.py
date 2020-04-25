@@ -60,6 +60,19 @@ def update_bullets( bullets ):
         if bullet.rect.bottom < 0:
             bullets.remove( bullet )
 
+def get_number_alience_( game_settings, alien_width ):
+    """ вычисляет кол. прищельцев в ряду"""
+    avulable_space_x = game_settings.screen_width - 2 * alien_width
+    number_alien_x = int( avulable_space_x / ( 2 * alien_width ) )
+    return number_alien_x
+
+def create_alien( game_settings, screen, alience, alien_number, alien_width ):
+    # Создание прищельца и размещение его в ряду
+    alien = Alien( game_settings, screen )
+    alien.x = alien_width + 2 * alien_width * alien_number
+    alien.rect.x = alien.x
+    alience.add( alien )
+
 def create_fleet( game_settings, screen , alience):
     """ Создает флот прищельцев """
     # Создание прищельца и вычисление кол. прищельцев в ряду
@@ -67,14 +80,9 @@ def create_fleet( game_settings, screen , alience):
 
     alien = Alien( game_settings, screen )
     alien_width = alien.rect.width
-    avulable_space_x = game_settings.scree.width - 2 * alien_width
-    number_alien_x = int( avulable_space_x / ( 2 * alien_width ) )
-
-    # Создание первого ряда прищельцев
+    number_alien_x = get_number_alience_( game_settings, alien_width )
     for alien_number in range( number_alien_x ):
-        # Создание прищельца и размещение его в ряду
-        alien = Alien( game_settings, screen )
-        alien.x = alien_width + 2 * alien_width * alien_number
-        alien.rect.x = alien.x
-        alience.add( alien )
+        create_alien( game_settings, screen, alience, alien_number, alien_width )
+
+    
     

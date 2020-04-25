@@ -23,7 +23,7 @@ def run_game():
     alience = Group()
 
     # создания флота прищельцев
-    fg.create_fleet( game_settings, screen, alience )
+    gf.create_fleet( game_settings, screen, alience )
 
     # основной цикл
     while True:
