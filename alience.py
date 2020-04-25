@@ -3,7 +3,7 @@ from pygame.sprite import Group
 from settings import Settings
 from ship import Ship
 import game_functions as gf
-from alien import Alien
+#from alien import Alien
 
 def run_game():
     #game init
@@ -12,14 +12,19 @@ def run_game():
     screen = pygame.display.set_mode( ( game_settings.screen_width, game_settings.screen_height ) )
     pygame.display.set_caption( "Alience" )
 
+    #
+
     # создание корабля
     ship = Ship( screen, game_settings )
 
-    # создание прищельца
-    alien = Alien( game_settings, screen )
-
     # Создание группы для хранения пуль
     bullets = Group()
+
+    # создание группы флота прищельцев
+    alience = Group()
+
+    # создания флота прищельцев
+    fg.create_fleet( game_settings, screen, alience )
 
     # основной цикл
     while True:
