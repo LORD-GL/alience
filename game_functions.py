@@ -1,6 +1,7 @@
 import sys
 import pygame
 from bullet import Bullet
+from alien import Alien
 
 def check_keydown_events(event, ship, screen, game_settings, bullets ):
     """Реагирует на нажатие клавиш"""
@@ -37,7 +38,7 @@ def check_events( game_settings, screen, ship, bullets ):
             elif event.type == pygame.KEYUP:
                 check_keyup_events(event, ship)
 
-def update_screen( game_settings, screen, ship, bullets, alien ):
+def update_screen( game_settings, screen, ship, bullets, alience ):
     """ Обновляет экран """
     # перересовка
     screen.fill( game_settings.bg_color )
@@ -47,7 +48,7 @@ def update_screen( game_settings, screen, ship, bullets, alien ):
     # прорисовка кораблика
     ship.blitme()
     # Прорисовка прищельцев
-    alien.blitme()
+    alience.draw( screen )
     # отображение последнего прорисованного экрана
     pygame.display.flip()
 
@@ -58,3 +59,5 @@ def update_bullets( bullets ):
     for bullet in bullets.copy():
         if bullet.rect.bottom < 0:
             bullets.remove( bullet )
+
+def 
