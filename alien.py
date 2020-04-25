@@ -4,7 +4,7 @@ from pygame.sprite import Sprite
 class Alien( Sprite ):
     """ Класс, пришельца """
     def __init__( self, game_settings, screen ):
-        super().init()
+        super().__init__()
         self.screen = screen
         self.game_settings = game_settings
 
